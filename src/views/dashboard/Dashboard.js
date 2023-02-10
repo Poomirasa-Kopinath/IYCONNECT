@@ -468,36 +468,17 @@ const Dashboard = () => {
       }
     }
   },
+  yaxis: {
+    title: {
+      text: ''
+    },
+    labels:{
+      show:0
+     }
+  },
   grid: {
-    show: true,
-    borderColor: '#90A4AE',
-    strokeDashArray: 0,
-    position: 'back',
-    xaxis: {
-        lines: {
-            show: 0
-        }
-    },   
-    yaxis: {
-        lines: {
-            show: 1
-        }
-    },  
-    row: {
-        colors: undefined,
-        opacity: 0.5
-    },  
-    column: {
-        colors: undefined,
-        opacity: 0.5
-    },  
-    padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0
-    },  
-}
+    show: false,
+  }
   };
   var OnboardingClients = {
     series: [{
@@ -547,36 +528,17 @@ const Dashboard = () => {
       }
     }
   },
+  yaxis: {
+    title: {
+      text: ''
+    },
+    labels:{
+      show:0
+     }
+  },
   grid: {
-    show: true,
-    borderColor: '#90A4AE',
-    strokeDashArray: 0,
-    position: 'back',
-    xaxis: {
-        lines: {
-            show: 0
-        }
-    },   
-    yaxis: {
-        lines: {
-            show: 1
-        }
-    },  
-    row: {
-        colors: undefined,
-        opacity: 0.5
-    },  
-    column: {
-        colors: undefined,
-        opacity: 0.5
-    },  
-    padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0
-    },  
-}
+    show: false,
+  }
   };
   var ProspectClients = {
     series: [{
@@ -622,36 +584,18 @@ const Dashboard = () => {
         fontSize: '12px'
       }
     }
-  },  grid: {
-    show: 0,
-    borderColor: '#90A4AE',
-    strokeDashArray: 0,
-    position: 'back',
-    xaxis: {
-        lines: {
-            show: 0
-        }
-    },   
-    yaxis: {
-        lines: {
-            show: 1
-        }
-    },  
-    row: {
-        colors: undefined,
-        opacity: 0.5
-    },  
-    column: {
-        colors: undefined,
-        opacity: 0.5
-    },  
-    padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0
-    },  
-}
+  },
+  yaxis: {
+    title: {
+      text: ''
+    },
+    labels:{
+      show:0
+     }
+  },
+  grid: {
+    show: false,
+  }
   };
 
   var serviceWiseStatus = {
@@ -764,7 +708,7 @@ const Dashboard = () => {
       {/* <WidgetsBrand withCharts /> */}
       <CRow className="mt-4">
         <CCol sm={4}>
-          <CCard>
+          <CCard style={{background:'#ff97f6'}}>
             <CCardBody>
             <CCardTitle>Registered Clients</CCardTitle>
               <CCardText id="Registered-Clients-Chart">
@@ -773,7 +717,7 @@ const Dashboard = () => {
           </CCard>
         </CCol>
         <CCol sm={4}>
-          <CCard>
+          <CCard style={{background:'#ffcf9b'}}>
             <CCardBody >
             <CCardTitle>Onboarding Clients</CCardTitle>
               <CCardText id="Onboarding-Clients-Chart">
@@ -782,7 +726,7 @@ const Dashboard = () => {
           </CCard>
         </CCol>
         <CCol sm={4}>
-          <CCard>
+          <CCard style={{background:'#00e4ff'}}>
             <CCardBody >
             <CCardTitle>Prospect Clients</CCardTitle>
               <CCardText id="Prospect-Clients-Chart">
