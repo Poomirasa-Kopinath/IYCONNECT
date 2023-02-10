@@ -296,7 +296,7 @@ const Dashboard = () => {
       }
     ],
     chart: {
-    height: 350,
+    height: 436,
     type: 'line',
     zoom: {
       enabled: false
@@ -311,7 +311,7 @@ const Dashboard = () => {
     colors:['#8859cf','#009ceb','#00c4d1']
   },
   title: {
-    text: 'Product Trends by Month',
+    text: '',
     align: 'left'
   },
   
@@ -348,25 +348,28 @@ const Dashboard = () => {
 
   var options3 = {
     series: [{
-    name: 'Marine Sprite',
+    name: 'Client in Progress',
     data: [44, 55, 41, 37, 22, 43, 21]
   }, {
-    name: 'Striking Calf',
+    name: 'Client Overide',
     data: [53, 32, 33, 52, 13, 43, 32]
   }, {
-    name: 'Tank Picture',
+    name: 'Task in Progress',
     data: [12, 17, 11, 9, 15, 11, 20]
   }, {
-    name: 'Bucket Slope',
+    name: 'Task Overdue',
     data: [9, 7, 5, 8, 6, 9, 4]
   }, {
-    name: 'Reborn Kid',
+    name: 'Yet to Start',
     data: [25, 12, 19, 32, 25, 24, 10]
   }],
     chart: {
     type: 'bar',
     height: 350,
     stacked: true,
+  },
+  fill: {
+    colors:['#4988db','#ff7b28','#a7a7a7','#ffca00','#464fc9']
   },
   plotOptions: {
     bar: {
@@ -393,12 +396,20 @@ const Dashboard = () => {
   xaxis: {
     categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
     labels: {
+      style:{
+        colors:'white'
+      },
       formatter: function (val) {
         return val + "K"
       }
     }
   },
   yaxis: {
+    labels: {
+      style:{
+        colors:'white'
+      }
+    },
     title: {
       text: undefined
     },
@@ -410,13 +421,26 @@ const Dashboard = () => {
       }
     }
   },
-  fill: {
-    opacity: 1
-  },
   legend: {
     position: 'top',
     horizontalAlign: 'left',
-    offsetX: 40
+    offsetX: 40,
+    labels: {
+      colors:['white'],
+  },
+  }, 
+  grid: {
+    show: 1,
+    xaxis: {
+      lines: {
+          show: 1
+      }
+  },   
+  yaxis: {
+      lines: {
+          show: 0
+      }
+  }
   }
   };
   var registeredClients = {
@@ -625,6 +649,9 @@ const Dashboard = () => {
     type: 'bar',
     height: 350
   },
+  fill: {
+    colors:['#8859cf','#009ceb','#00c4d1']
+  },
   plotOptions: {
     bar: {
       horizontal: false,
@@ -645,7 +672,7 @@ const Dashboard = () => {
   },
   yaxis: {
     title: {
-      text: '$ (thousands)'
+      text: ''
     }
   },
   fill: {
@@ -657,6 +684,19 @@ const Dashboard = () => {
         return "$ " + val + " thousands"
       }
     }
+  },
+  grid: {
+    show: 1,
+    xaxis: {
+      lines: {
+          show: 0
+      }
+  },   
+  yaxis: {
+      lines: {
+          show: 1
+      }
+  }
   }
   };
 
@@ -687,6 +727,10 @@ const Dashboard = () => {
             <CCardBody>
             <CCardTitle>Invoice Data</CCardTitle>
             <Calendar />
+            <div style={{display:'flex',justifyContent:'center',columnGap:'3rem',marginTop:'2rem'}}>
+              <p style={{margin:'0'}}>Invoice Count</p>
+              <p style={{margin:'0'}}>Invoice Amount</p>
+            </div>
               <CCardText id="Column-chart">
               </CCardText>
             </CCardBody>
@@ -981,9 +1025,9 @@ const Dashboard = () => {
       </div>
         </CCard>
         
-        <CCard className="mb-4 mt-4">
+        <CCard className="mb-4 mt-4" style={{background:'#575757'}}>
           <CCardBody>
-            <CCardTitle>User Wise Data</CCardTitle>
+            <CCardTitle style={{color:'white'}}>User Wise Data</CCardTitle>
             <CCardText id="Bar-chart">
             </CCardText>
           </CCardBody>
@@ -996,10 +1040,10 @@ const Dashboard = () => {
           </CCardText>
         </CCardBody>
       </CCard>
-      <CCard className="mb-4">
+      <CCard className="mb-4 p-4">
       <div>
-        <h2 style={{color:'#3399ff'}}>Things To Follow</h2>
-      <table className="hi" style={{width:'100%'}}>
+        <h5 style={{color:'#3399ff'}}>Things To Follow</h5>
+      <table className="m-auto" style={{width:'80%'}}>
              <thead>
                 <tr style={{background:'blue',color:'white',height:'50px'}}>
                     <th>Services</th>
@@ -1029,10 +1073,10 @@ const Dashboard = () => {
       </div>
       </CCard>
       
-      <CCard className="mb-4">
+      <CCard className="mb-4 p-4">
       <div>
-        <h2 style={{color:'#3399ff'}}>Things To Follow</h2>
-      <table className="hi" style={{width:'100%'}}>
+        <h5 style={{color:'#3399ff'}}>Things To Follow</h5>
+      <table className="m-auto" style={{width:'80%'}}>
              <thead>
                 <tr style={{background:'blue',color:'white',height:'50px'}}>
                     <th>Applied Data</th>
@@ -1064,10 +1108,10 @@ const Dashboard = () => {
             </table> 
       </div>
       </CCard>
-      <CCard className="mb-4">
+      <CCard className="mb-4 p-4">
       <div>
-        <h2 style={{color:'#3399ff'}}>Things To Do</h2>
-      <table className="hi" style={{width:'100%'}}>
+        <h5 style={{color:'#3399ff'}}>Things To Do</h5>
+      <table className="m-auto" style={{width:'80%'}}>
              <thead>
                 <tr style={{background:'blue',color:'white',height:'50px'}}>
                     <th>Services</th>
@@ -1096,10 +1140,10 @@ const Dashboard = () => {
             </table> 
       </div>
       </CCard>
-      <CCard className="mb-4">
+      <CCard className="mb-4 p-4">
       <div>
-        <h2 style={{color:'#3399ff'}}>Things To Do</h2>
-      <table className="hi" style={{width:'100%'}}>
+        <h5 style={{color:'#3399ff'}}>Things To Do</h5>
+      <table className="m-auto" style={{width:'80%'}}>
              <thead>
                 <tr style={{background:'blue',color:'white',height:'50px'}}>
                     <th>Services</th>
@@ -1128,10 +1172,10 @@ const Dashboard = () => {
             </table> 
       </div>
       </CCard>
-      <CCard className="mb-4">
+      <CCard className="mb-4 p-4">
       <div>
-        <h2 style={{color:'#3399ff'}}>Things To Do</h2>
-      <table className="hi" style={{width:'100%'}}>
+        <h5 style={{color:'#3399ff'}}>Things To Do</h5>
+      <table className="m-auto" style={{width:'80%'}}>
              <thead>
                 <tr style={{background:'blue',color:'white',height:'50px'}}>
                     <th>Services</th>
