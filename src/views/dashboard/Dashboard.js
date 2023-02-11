@@ -446,7 +446,7 @@ const Dashboard = () => {
     data: [21, 22, 10, 28]
   }],
     chart: {
-    height: 350,
+    height: 250,
     type: 'bar',
     events: {
       click: function(chart, w, e) {
@@ -507,7 +507,7 @@ const Dashboard = () => {
     data: [21, 22, 10, 28]
   }],
     chart: {
-    height: 350,
+    height: 250,
     type: 'bar',
     events: {
       click: function(chart, w, e) {
@@ -567,7 +567,7 @@ const Dashboard = () => {
     data: [21, 22]
   }],
     chart: {
-    height: 350,
+    height: 250,
     type: 'bar',
     events: {
       click: function(chart, w, e) {
@@ -749,7 +749,7 @@ const Dashboard = () => {
         <CCol sm={4}>
           <CCard style={{background:'#ff97f6'}}>
             <CCardBody>
-            <CCardTitle>Registered Clients</CCardTitle>
+            <CCardTitle>Registered Clients <span style={{float:'right'}}>405</span></CCardTitle>
               <CCardText id="Registered-Clients-Chart">
               </CCardText>
             </CCardBody>
@@ -758,7 +758,7 @@ const Dashboard = () => {
         <CCol sm={4}>
           <CCard style={{background:'#ffcf9b'}}>
             <CCardBody >
-            <CCardTitle>Onboarding Clients</CCardTitle>
+            <CCardTitle>Onboarding Clients <span style={{float:'right'}}>101</span></CCardTitle>
               <CCardText id="Onboarding-Clients-Chart">
               </CCardText>
             </CCardBody>
@@ -767,7 +767,7 @@ const Dashboard = () => {
         <CCol sm={4}>
           <CCard style={{background:'#00e4ff'}}>
             <CCardBody >
-            <CCardTitle>Prospect Clients</CCardTitle>
+            <CCardTitle>Prospect Clients <span style={{float:'right'}}>201</span></CCardTitle>
               <CCardText id="Prospect-Clients-Chart">
               </CCardText>
             </CCardBody>
@@ -924,42 +924,6 @@ const Dashboard = () => {
             </table> 
       </div>
       </CCard>
-      
-      <CCard className="mb-4 p-4">
-      <div>
-        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Follow</h5>
-      <table className="m-auto" style={{width:'80%'}}>
-             <thead>
-                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
-                    <th>Applied Data</th>
-                    <th>Leave Form</th>
-                    <th>Leave To</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Leave Mode</th>
-                    <th>Leave Type</th>
-                    <th>Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr style={{background:'#f2edf9',height:'40px'}}>
-                    <td>As Hoc</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr style={{height:'40px'}}>
-                    <td>My task</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                </tbody>
-            </table> 
-      </div>
-      </CCard>
       <CCard className="mb-4 p-4">
       <div>
         <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Do</h5>
@@ -992,70 +956,100 @@ const Dashboard = () => {
             </table> 
       </div>
       </CCard>
-      <CCard className="mb-4 p-4">
-      <div>
-        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Do</h5>
-      <table className="m-auto" style={{width:'80%'}}>
-             <thead>
-                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
-                    <th>Services</th>
-                    <th>Task in Progress</th>
-                    <th>Task Overdue</th>
-                    <th>Client in Progress</th>
-                    <th>Client Overdue</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr style={{background:'#f2edf9',height:'40px'}}>
-                    <td>As Hoc</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr style={{height:'40px'}}>
-                    <td>My task</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                </tbody>
-            </table> 
-      </div>
-      </CCard>
-      <CCard className="mb-4 p-4">
-      <div>
-        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Do</h5>
-      <table className="m-auto" style={{width:'80%'}}>
-             <thead>
-                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
-                    <th>Services</th>
-                    <th>Task in Progress</th>
-                    <th>Task Overdue</th>
-                    <th>Client in Progress</th>
-                    <th>Client Overdue</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr style={{background:'#f2edf9',height:'40px'}}>
-                    <td>As Hoc</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr style={{height:'40px'}}>
-                    <td>My task</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                </tbody>
-            </table> 
-      </div>
-      </CCard>
+
+      <div className="row">
+        <div className="col-xl-12">
+          <div id="panel-2" className="panel">
+              <div className="panel-hdr">
+                  <h2><span id="lblContent">  My Diary </span></h2>
+               </div>
+                <div className="panel-container show">
+                    <div className="panel-content bg-subtlelight-fade">
+                        <div id="calender" className="fc fc-unthemed fc-ltr">
+                            <div className="fc-toolbar fc-header-toolbar">
+                                <div className="fc-left">
+                                <div className="fc-button-group"><button type="button" className="fc-prev-button fc-button fc-state-default fc-corner-left">
+                                <span className="fc-icon fc-icon-left-single-arrow"></span></button>
+                                <button type="button" className="fc-next-button fc-button fc-state-default fc-corner-right"><span className="fc-icon fc-icon-right-single-arrow">
+                                </span></button>
+                                </div>
+                                <button type="button" className="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled" disabled="">today</button></div>
+                                <div className="fc-right">
+                                  <div className="fc-button-group">
+                                    <button type="button" className="fc-month-button fc-button fc-state-default fc-corner-left">month</button>
+                                    <button type="button" className="fc-basicWeek-button fc-button fc-state-default fc-state-active">week</button>
+                                    <button type="button" className="fc-basicDay-button fc-button fc-state-default">day</button>
+                                    <button type="button" className="fc-agenda-button fc-button fc-state-default fc-corner-right">agenda</button>
+                                    </div></div><div className="fc-center"><h2>Feb 5 – 11, 2023</h2></div><div className="fc-clear"></div></div>
+                                    <div className="fc-view-container">
+                                      <div className="fc-view fc-basicWeek-view fc-basic-view">
+                                        <table>
+                                          <thead className="fc-head">
+                                            <tr><td className="fc-head-container fc-widget-header"><div className="fc-row fc-widget-header">
+                                              <table><thead><tr><th className="fc-day-header fc-widget-header fc-sun fc-past" data-date="2023-02-05"><span>Sun 2/5</span></th>
+                                              <th className="fc-day-header fc-widget-header fc-mon fc-past" data-date="2023-02-06"><span>Mon 2/6</span></th>
+                                              <th className="fc-day-header fc-widget-header fc-tue fc-past" data-date="2023-02-07"><span>Tue 2/7</span></th>
+                                              <th className="fc-day-header fc-widget-header fc-wed fc-past" data-date="2023-02-08"><span>Wed 2/8</span></th>
+                                              <th className="fc-day-header fc-widget-header fc-thu fc-past" data-date="2023-02-09"><span>Thu 2/9</span></th>
+                                              <th className="fc-day-header fc-widget-header fc-fri fc-past" data-date="2023-02-10"><span>Fri 2/10</span></th>
+                                <th className="fc-day-header fc-widget-header fc-sat fc-today" data-date="2023-02-11">
+                                <span>Sat 2/11</span>
+                                </th>
+                                </tr></thead></table></div></td></tr></thead><tbody className="fc-body"><tr><td className="fc-widget-content">
+                                  <div className="fc-scroller fc-day-grid-container" style={{overflow: 'hidden', height: '377.883px'}}>
+                                    <div className="fc-day-grid fc-unselectable">
+                                      <div className="fc-row fc-week fc-widget-content fc-rigid" style={{height: '377px'}}>
+                                      <div className="fc-bg"><table><tbody><tr><td className="fc-day fc-widget-content fc-sun fc-past" data-date="2023-02-05"></td>
+                                      <td className="fc-day fc-widget-content fc-mon fc-past" data-date="2023-02-06"></td>
+                                      <td className="fc-day fc-widget-content fc-tue fc-past" data-date="2023-02-07"></td>
+                                      <td className="fc-day fc-widget-content fc-wed fc-past" data-date="2023-02-08"></td>
+                                      <td className="fc-day fc-widget-content fc-thu fc-past" data-date="2023-02-09"></td>
+                                      <td className="fc-day fc-widget-content fc-fri fc-past" data-date="2023-02-10"></td>
+                                      <td className="fc-day fc-widget-content fc-sat fc-today fc-state-highlight" data-date="2023-02-11"></td></tr></tbody></table></div>
+                                      <div className="fc-content-skeleton">
+                                        <table>
+                                          <tbody>
+                                            <tr>
+                                              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                      <div className="fc-highlight-skeleton"><table><tbody><tr><td colSpan="3"></td><td className="fc-highlight" colSpan="1"></td><td colSpan="3"></td></tr></tbody></table></div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </td>
+                                            </tr>
+                                            </tbody>
+                                            </table>
+                                            </div>
+                                            </div>
+                                            </div>
+                                <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                                    <div className="modal-dialog" role="document">
+                                        <div className="modal-content">
+                                            <div className="modal-header">
+                                                <h5 className="modal-title"><span id="eventTitle"></span></h5>
+                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><i className="fal fa-times"></i></span>
+                                                </button>
+                                            </div>
+                                            <div className="modal-body">
+                                                <div className="row mb-3">
+                                                    <div className="col-md-12">
+                                                        <p id="pDetails" className="mb-3"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </>
   )
 }
