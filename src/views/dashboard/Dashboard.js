@@ -59,8 +59,6 @@ import WidgetsBrand from '../widgets/WidgetsBrand'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import Calendar from './components/Calendar'
 
-
-
 const Dashboard = () => {
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
@@ -720,7 +718,6 @@ const Dashboard = () => {
 
   return (
     <>
-      {/* <WidgetsDropdown /> */}
       <CRow>
         <CCol sm={6}>
           <CCard>
@@ -748,8 +745,6 @@ const Dashboard = () => {
       </CRow>
 
 
-
-      {/* <WidgetsBrand withCharts /> */}
       <CRow className="mt-4">
         <CCol sm={4}>
           <CCard style={{background:'#ff97f6'}}>
@@ -779,150 +774,7 @@ const Dashboard = () => {
           </CCard>
         </CCol>
       </CRow>
-      {/* <CRow>
-        <CCol xs>
-          <CCard className="mb-4">
-            <CCardHeader>Traffic {' & '} Sales</CCardHeader>
-            <CCardBody>
-              <CRow>
-                <CCol xs={12} md={6} xl={6}>
-                  <CRow>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-info py-1 px-3">
-                        <div className="text-medium-emphasis small">New Clients</div>
-                        <div className="fs-5 fw-semibold">9,123</div>
-                      </div>
-                    </CCol>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-danger py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">Recurring Clients</div>
-                        <div className="fs-5 fw-semibold">22,643</div>
-                      </div>
-                    </CCol>
-                  </CRow>
-
-                  <hr className="mt-0" />
-                  {progressGroupExample1.map((item, index) => (
-                    <div className="progress-group mb-4" key={index}>
-                      <div className="progress-group-prepend">
-                        <span className="text-medium-emphasis small">{item.title}</span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <CProgress thin color="info" value={item.value1} />
-                        <CProgress thin color="danger" value={item.value2} />
-                      </div>
-                    </div>
-                  ))}
-                </CCol>
-
-                <CCol xs={12} md={6} xl={6}>
-                  <CRow>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-warning py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">Pageviews</div>
-                        <div className="fs-5 fw-semibold">78,623</div>
-                      </div>
-                    </CCol>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-success py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">Organic</div>
-                        <div className="fs-5 fw-semibold">49,123</div>
-                      </div>
-                    </CCol>
-                  </CRow>
-
-                  <hr className="mt-0" />
-
-                  {progressGroupExample2.map((item, index) => (
-                    <div className="progress-group mb-4" key={index}>
-                      <div className="progress-group-header">
-                        <CIcon className="me-2" icon={item.icon} size="lg" />
-                        <span>{item.title}</span>
-                        <span className="ms-auto fw-semibold">{item.value}%</span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <CProgress thin color="warning" value={item.value} />
-                      </div>
-                    </div>
-                  ))}
-
-                  <div className="mb-5"></div>
-
-                  {progressGroupExample3.map((item, index) => (
-                    <div className="progress-group" key={index}>
-                      <div className="progress-group-header">
-                        <CIcon className="me-2" icon={item.icon} size="lg" />
-                        <span>{item.title}</span>
-                        <span className="ms-auto fw-semibold">
-                          {item.value}{' '}
-                          <span className="text-medium-emphasis small">({item.percent}%)</span>
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <CProgress thin color="success" value={item.percent} />
-                      </div>
-                    </div>
-                  ))}
-                </CCol>
-              </CRow>
-
-              <br />
-
-              <CTable align="middle" className="mb-0 border" hover responsive>
-                <CTableHead color="light">
-                  <CTableRow>
-                    <CTableHeaderCell className="text-center">
-                      <CIcon icon={cilPeople} />
-                    </CTableHeaderCell>
-                    <CTableHeaderCell>User</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">Country</CTableHeaderCell>
-                    <CTableHeaderCell>Usage</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">Payment Method</CTableHeaderCell>
-                    <CTableHeaderCell>Activity</CTableHeaderCell>
-                  </CTableRow>
-                </CTableHead>
-                <CTableBody>
-                  {tableExample.map((item, index) => (
-                    <CTableRow v-for="item in tableItems" key={index}>
-                      <CTableDataCell className="text-center">
-                        <CAvatar size="md" src={item.avatar.src} status={item.avatar.status} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div>{item.user.name}</div>
-                        <div className="small text-medium-emphasis">
-                          <span>{item.user.new ? 'New' : 'Recurring'}</span> | Registered:{' '}
-                          {item.user.registered}
-                        </div>
-                      </CTableDataCell>
-                      <CTableDataCell className="text-center">
-                        <CIcon size="xl" icon={item.country.flag} title={item.country.name} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="clearfix">
-                          <div className="float-start">
-                            <strong>{item.usage.value}%</strong>
-                          </div>
-                          <div className="float-end">
-                            <small className="text-medium-emphasis">{item.usage.period}</small>
-                          </div>
-                        </div>
-                        <CProgress thin color={item.usage.color} value={item.usage.value} />
-                      </CTableDataCell>
-                      <CTableDataCell className="text-center">
-                        <CIcon size="xl" icon={item.payment.icon} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="small text-medium-emphasis">Last login</div>
-                        <strong>{item.activity}</strong>
-                      </CTableDataCell>
-                    </CTableRow>
-                  ))}
-                </CTableBody>
-              </CTable>
-            </CCardBody>
-          </CCard>
-        </CCol>
-      </CRow> */}
+      
         <CCard className="mt-4 p-4">
       <div>
         <h5 style={{color:'#3399ff'}}>Things To Follow</h5>
@@ -1042,10 +894,10 @@ const Dashboard = () => {
       </CCard>
       <CCard className="mb-4 p-4">
       <div>
-        <h5 style={{color:'#3399ff'}}>Things To Follow</h5>
+        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Follow</h5>
       <table className="m-auto" style={{width:'80%'}}>
              <thead>
-                <tr style={{background:'blue',color:'white',height:'50px'}}>
+                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
                     <th>Services</th>
                     <th>Task in Progress</th>
                     <th>Task Overdue</th>
@@ -1054,7 +906,7 @@ const Dashboard = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr style={{background:'#0000ff1f',height:'40px'}}>
+                <tr style={{background:'#f2edf9',height:'40px'}}>
                     <td>As Hoc</td>
                     <td>0</td>
                     <td>0</td>
@@ -1075,10 +927,10 @@ const Dashboard = () => {
       
       <CCard className="mb-4 p-4">
       <div>
-        <h5 style={{color:'#3399ff'}}>Things To Follow</h5>
+        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Follow</h5>
       <table className="m-auto" style={{width:'80%'}}>
              <thead>
-                <tr style={{background:'blue',color:'white',height:'50px'}}>
+                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
                     <th>Applied Data</th>
                     <th>Leave Form</th>
                     <th>Leave To</th>
@@ -1090,7 +942,7 @@ const Dashboard = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr style={{background:'#0000ff1f',height:'40px'}}>
+                <tr style={{background:'#f2edf9',height:'40px'}}>
                     <td>As Hoc</td>
                     <td>0</td>
                     <td>0</td>
@@ -1110,10 +962,10 @@ const Dashboard = () => {
       </CCard>
       <CCard className="mb-4 p-4">
       <div>
-        <h5 style={{color:'#3399ff'}}>Things To Do</h5>
+        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Do</h5>
       <table className="m-auto" style={{width:'80%'}}>
              <thead>
-                <tr style={{background:'blue',color:'white',height:'50px'}}>
+                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
                     <th>Services</th>
                     <th>Task in Progress</th>
                     <th>Task Overdue</th>
@@ -1122,7 +974,7 @@ const Dashboard = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr style={{background:'#0000ff1f',height:'40px'}}>
+                <tr style={{background:'#f2edf9',height:'40px'}}>
                     <td>As Hoc</td>
                     <td>0</td>
                     <td>0</td>
@@ -1142,10 +994,10 @@ const Dashboard = () => {
       </CCard>
       <CCard className="mb-4 p-4">
       <div>
-        <h5 style={{color:'#3399ff'}}>Things To Do</h5>
+        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Do</h5>
       <table className="m-auto" style={{width:'80%'}}>
              <thead>
-                <tr style={{background:'blue',color:'white',height:'50px'}}>
+                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
                     <th>Services</th>
                     <th>Task in Progress</th>
                     <th>Task Overdue</th>
@@ -1154,7 +1006,7 @@ const Dashboard = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr style={{background:'#0000ff1f',height:'40px'}}>
+                <tr style={{background:'#f2edf9',height:'40px'}}>
                     <td>As Hoc</td>
                     <td>0</td>
                     <td>0</td>
@@ -1174,10 +1026,10 @@ const Dashboard = () => {
       </CCard>
       <CCard className="mb-4 p-4">
       <div>
-        <h5 style={{color:'#3399ff'}}>Things To Do</h5>
+        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Do</h5>
       <table className="m-auto" style={{width:'80%'}}>
              <thead>
-                <tr style={{background:'blue',color:'white',height:'50px'}}>
+                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
                     <th>Services</th>
                     <th>Task in Progress</th>
                     <th>Task Overdue</th>
@@ -1186,7 +1038,7 @@ const Dashboard = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr style={{background:'#0000ff1f',height:'40px'}}>
+                <tr style={{background:'#f2edf9',height:'40px'}}>
                     <td>As Hoc</td>
                     <td>0</td>
                     <td>0</td>

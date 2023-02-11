@@ -22,6 +22,7 @@ const AppSidebar = () => {
 
   return (
     <CSidebar
+      style={{background:'#175ca9'}}
       position="fixed"
       unfoldable={unfoldable}
       visible={sidebarShow}
