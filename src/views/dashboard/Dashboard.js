@@ -456,7 +456,7 @@ const Dashboard = () => {
   },
   fill: {
     opacity: 1,
-    colors:['#8859cf','#8859cf','#8859cf','#8859cf']
+    colors:['#175ca9cc','#175ca9cc','#175ca9cc','#175ca9cc']
   },
  
   plotOptions: {
@@ -480,12 +480,7 @@ const Dashboard = () => {
     ],
     labels: {
       style: {
-        colors: [
-          'red',
-          'green',
-          'blue',
-          'black'
-        ],
+        colors:['#175ca9cc','#175ca9cc','#175ca9cc','#175ca9cc'],
         fontSize: '12px'
       }
     }
@@ -517,7 +512,7 @@ const Dashboard = () => {
   },
   fill: {
     opacity: 1,
-    colors:['#00eb58','#00eb58','#00eb58','#00eb58']
+    colors:['#175ca9cc','#175ca9cc','#175ca9cc','#175ca9cc']
   },
   plotOptions: {
     bar: {
@@ -540,12 +535,7 @@ const Dashboard = () => {
     ],
     labels: {
       style: {
-        colors: [
-          'purple',
-          'purple',
-          'purple',
-          'purple'
-        ],
+        colors: ['#175ca9aa','#175ca9aa','#175ca9aa','#175ca9aa'],
         fontSize: '12px'
       }
     }
@@ -577,7 +567,7 @@ const Dashboard = () => {
   },
   fill: {
     opacity: 1,
-    colors:['#0079f7','#0079f7']
+    colors:['#175ca9cc','#175ca9cc']
   },
  
   plotOptions: {
@@ -599,10 +589,7 @@ const Dashboard = () => {
     ],
     labels: {
       style: {
-        colors: [
-          'red',
-          'green',
-        ],
+        colors:['#175ca9aa','#175ca9aa','#175ca9aa','#175ca9aa'],
         fontSize: '12px'
       }
     }
@@ -747,7 +734,7 @@ const Dashboard = () => {
 
       <CRow className="mt-4">
         <CCol sm={4}>
-          <CCard style={{background:'#ff97f6'}}>
+          <CCard style={{backgroundColor:'#175ca912'}}>
             <CCardBody>
             <CCardTitle>Registered Clients <span style={{float:'right'}}>405</span></CCardTitle>
               <CCardText id="Registered-Clients-Chart">
@@ -756,7 +743,7 @@ const Dashboard = () => {
           </CCard>
         </CCol>
         <CCol sm={4}>
-          <CCard style={{background:'#ffcf9b'}}>
+          <CCard style={{backgroundColor:'#175ca912'}}>
             <CCardBody >
             <CCardTitle>Onboarding Clients <span style={{float:'right'}}>101</span></CCardTitle>
               <CCardText id="Onboarding-Clients-Chart">
@@ -765,7 +752,7 @@ const Dashboard = () => {
           </CCard>
         </CCol>
         <CCol sm={4}>
-          <CCard style={{background:'#00e4ff'}}>
+          <CCard style={{backgroundColor:'#175ca912'}}>
             <CCardBody >
             <CCardTitle>Prospect Clients <span style={{float:'right'}}>201</span></CCardTitle>
               <CCardText id="Prospect-Clients-Chart">
@@ -779,20 +766,20 @@ const Dashboard = () => {
       <div>
         <h5 style={{color:'#3399ff'}}>Things To Follow</h5>
         <div style={{display:'flex',justifyContent:'space-between',marginBottom:'1rem'}}>
-          <div style={{background:'#ffda00',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="SELECT ALL"  defaultChecked /></div>
-          <div style={{background:'#74de00',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="CORPORATE"  defaultChecked /></div>
-          <div style={{background:'#00c5ff',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="SOLE TRADER"  defaultChecked /></div>
-          <div style={{background:'#74de00',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="INDIVIDUAL"  defaultChecked /></div>
-          <div style={{background:'#74de00',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="PARTNERSHIP"  defaultChecked /></div>
+          <div style={{background:'#ffef93',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="SELECT ALL"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="CORPORATE"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="SOLE TRADER"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="INDIVIDUAL"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="PARTNERSHIP"  defaultChecked /></div>
         </div>
         <div style={{display:'flex',justifyContent:'space-between',marginBottom:'1rem'}}>
-          <div style={{background:'#ffda00',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="SELECT ALL"  defaultChecked /></div>
-          <div style={{background:'#00ffff',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="VAT"  defaultChecked /></div>
-          <div style={{background:'#ff9a00',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="CT"  defaultChecked /></div>
-          <div style={{background:'#ff00fe',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="PAVE"  defaultChecked /></div>
-          <div style={{background:'#00c5ff',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="PENSION"  defaultChecked /></div>
-          <div style={{background:'#f1ff00',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="AA"  defaultChecked /></div>
-          <div style={{background:'#00c6ff',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="CS"  defaultChecked /></div>
+          <div style={{background:'#ffef93',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="SELECT ALL"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="VAT"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="CT"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="PAVE"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="PENSION"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="AA"  defaultChecked /></div>
+          <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="CS"  defaultChecked /></div>
         </div>
       <table className="hi" style={{width:'100%',textAlign:'center'}}>
              <thead>
