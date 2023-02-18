@@ -701,8 +701,6 @@ const Dashboard = () => {
   useEffect(() =>{
       var chart = new ApexCharts(document.querySelector("#Column-chart"), options);
       chart.render();
-      var chart = new ApexCharts(document.querySelector("#Line-chart"), options2);
-      chart.render();
       var chart = new ApexCharts(document.querySelector("#Bar-chart"), options3);
       chart.render();
       var chart = new ApexCharts(document.querySelector("#Registered-Clients-Chart"), registeredClients);
