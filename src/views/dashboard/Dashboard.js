@@ -685,7 +685,19 @@ const Dashboard = () => {
   }
   };
 
-
+  function openTab(evt, tab) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tab).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
   useEffect(() =>{
       var chart = new ApexCharts(document.querySelector("#Column-chart"), options);
       chart.render();
@@ -716,15 +728,6 @@ const Dashboard = () => {
               <p style={{margin:'0'}}>Invoice Amount</p>
             </div>
               <CCardText id="Column-chart">
-              </CCardText>
-            </CCardBody>
-          </CCard>
-        </CCol>
-        <CCol sm={6}>
-          <CCard>
-            <CCardBody >
-            <CCardTitle>Invoice Stat</CCardTitle>
-              <CCardText id="Line-chart">
               </CCardText>
             </CCardBody>
           </CCard>
@@ -761,10 +764,14 @@ const Dashboard = () => {
           </CCard>
         </CCol>
       </CRow>
-      
-        <CCard className="mt-4 p-4">
-      <div>
-        <h5 style={{color:'#3399ff'}}>Things To Follow</h5>
+      <div className="mt-4">
+      <div className="tab">
+        <button className="tablinks" onClick={(e) => openTab(e, 'tab1')}>Things To Follow</button>
+        <button className="tablinks" onClick={(e) => openTab(e, 'tab2')}>Things To Approve</button>
+        <button className="tablinks" onClick={(e) => openTab(e, 'tab3')}>Things To Do</button>
+      </div>
+      <CCard id="tab1" className="p-4 tabcontent">
+        <div>
         <div style={{display:'flex',justifyContent:'space-between',marginBottom:'1rem'}}>
           <div style={{background:'#ffef93',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="SELECT ALL"  defaultChecked /></div>
           <div style={{background:'#dae9f6',padding:'.5rem'}}><CFormCheck id="flexCheckChecked" label="CORPORATE"  defaultChecked /></div>
@@ -861,8 +868,72 @@ const Dashboard = () => {
                 </tr>
                 </tfoot>
             </table> 
+        </div>
+      </CCard>
+      <CCard id="tab2" className="p-4 tabcontent">
+      <div>
+      <table className="m-auto" style={{width:'80%'}}>
+             <thead>
+                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
+                    <th>Services</th>
+                    <th>Task in Progress</th>
+                    <th>Task Overdue</th>
+                    <th>Client in Progress</th>
+                    <th>Client Overdue</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style={{background:'#f2edf9',height:'40px'}}>
+                    <td>As Hoc</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr style={{height:'40px'}}>
+                    <td>My task</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                </tbody>
+            </table> 
       </div>
-        </CCard>
+      </CCard>
+      <CCard id="tab3" className="p-4 tabcontent">
+      <div>
+      <table className="m-auto" style={{width:'80%'}}>
+             <thead>
+                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
+                    <th>Services</th>
+                    <th>Task in Progress</th>
+                    <th>Task Overdue</th>
+                    <th>Client in Progress</th>
+                    <th>Client Overdue</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style={{background:'#f2edf9',height:'40px'}}>
+                    <td>As Hoc</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr style={{height:'40px'}}>
+                    <td>My task</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                </tbody>
+            </table> 
+      </div>
+      </CCard>
+      </div>
+    
         
         <CCard className="mb-4 mt-4" style={{background:'#575757'}}>
           <CCardBody>
@@ -879,70 +950,7 @@ const Dashboard = () => {
           </CCardText>
         </CCardBody>
       </CCard>
-      <CCard className="mb-4 p-4">
-      <div>
-        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Follow</h5>
-      <table className="m-auto" style={{width:'80%'}}>
-             <thead>
-                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
-                    <th>Services</th>
-                    <th>Task in Progress</th>
-                    <th>Task Overdue</th>
-                    <th>Client in Progress</th>
-                    <th>Client Overdue</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr style={{background:'#f2edf9',height:'40px'}}>
-                    <td>As Hoc</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr style={{height:'40px'}}>
-                    <td>My task</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                </tbody>
-            </table> 
-      </div>
-      </CCard>
-      <CCard className="mb-4 p-4">
-      <div>
-        <h5 style={{color:'#175ca9',fontWeight: 700,fontSize: '16px'}}>Things To Do</h5>
-      <table className="m-auto" style={{width:'80%'}}>
-             <thead>
-                <tr style={{background:'#175ca9',color:'white',height:'50px'}}>
-                    <th>Services</th>
-                    <th>Task in Progress</th>
-                    <th>Task Overdue</th>
-                    <th>Client in Progress</th>
-                    <th>Client Overdue</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr style={{background:'#f2edf9',height:'40px'}}>
-                    <td>As Hoc</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr style={{height:'40px'}}>
-                    <td>My task</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                </tbody>
-            </table> 
-      </div>
-      </CCard>
+   
 
       <div className="row">
         <div className="col-xl-12">

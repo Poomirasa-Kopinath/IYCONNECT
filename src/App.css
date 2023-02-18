@@ -355,3 +355,37 @@ element {
   font-size: 13px;
   font-weight: 500;
 }
+
+.tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #e9edf5;
+  }
+  
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+	color:#175ca9;
+  }
+
+  .tab button:hover {
+	background-color: #bbd3f9;
+  }
+  .tab button.active {
+	background-color: #bbd3f9;
+  }
+  .tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+  }
+  #tab1{
+	display: block;
+  }
