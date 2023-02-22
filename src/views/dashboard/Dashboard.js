@@ -47,7 +47,7 @@ import {
   cilUser,
   cilUserFemale,
 } from '@coreui/icons'
-
+import { AiOutlineCheckSquare, AiOutlineCloseSquare } from 'react-icons/ai';
 import avatar1 from 'src/assets/images/avatars/1.jpg'
 import avatar2 from 'src/assets/images/avatars/2.jpg'
 import avatar3 from 'src/assets/images/avatars/3.jpg'
@@ -785,23 +785,21 @@ const Dashboard = () => {
         </CCol>
       </CRow>
 
-      <CRow className="mt-4" style={{ height: '500px' }}>
+      <CRow className="mt-4">
         <CCol sm={6} className="m-auto">
-          <CCard>
-            <CCardBody >
-              <CCardTitle>Invoice Data</CCardTitle>
-              <Calendar />
-              <div style={{ display: 'flex', justifyContent: 'center', columnGap: '3rem', marginTop: '2rem' }}>
-                <p style={{ margin: '0' }}>Invoice Count</p>
-                <p style={{ margin: '0' }}>Invoice Amount</p>
-              </div>
-              <CCardText id="Column-chart">
-              </CCardText>
-            </CCardBody>
-          </CCard>
+          <div style={{ height: '500px', background: 'white', padding: "1rem" }}>
+            <CCardTitle>Invoice Data</CCardTitle>
+            <Calendar />
+            <div style={{ display: 'flex', justifyContent: 'center', columnGap: '3rem', marginTop: '2rem' }}>
+              <p style={{ margin: '0' }}>Invoice Count</p>
+              <p style={{ margin: '0' }}>Invoice Amount</p>
+            </div>
+            <CCardText id="Column-chart">
+            </CCardText>
+          </div>
         </CCol>
         <CCol sm={6}>
-          <div>
+          <div style={{ height: '500px' }}>
             <div className="tab">
               <button className="tablinks" onClick={(e) => openTab(e, 'tab1')}>Things To Follow</button>
               <button className="tablinks" onClick={(e) => openTab(e, 'tab3')}>Things To Do</button>
@@ -829,7 +827,7 @@ const Dashboard = () => {
                     <CFormCheck id="flexCheckChecked" label="CS" defaultChecked />
                   </ul>
                 </div>
-                <table style={{ width: '100%', textAlign: 'center', height: '190px' }}>
+                <table style={{ width: '100%', textAlign: 'center', height: '278px' }}>
                   <thead>
                     <tr style={{ background: 'blue', color: 'black', height: '50px' }}>
                       <th style={{ background: '#ffef93' }}>EMPLOYEE</th>
@@ -885,15 +883,13 @@ const Dashboard = () => {
               </div>
             </CCard >
             <CCard id="tab3" className="p-4 tabcontent">
-              <div>
+              <div style={{ height: "398px" }}>
                 <table className="m-auto" style={{ width: '80%' }}>
                   <thead>
                     <tr style={{ background: '#175ca9', color: 'white', height: '50px' }}>
                       <th>Services</th>
                       <th>Task in Progress</th>
                       <th>Task Overdue</th>
-                      <th>Client in Progress</th>
-                      <th>Client Overdue</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -901,13 +897,9 @@ const Dashboard = () => {
                       <td>As Hoc</td>
                       <td>0</td>
                       <td>0</td>
-                      <td>0</td>
-                      <td>1</td>
                     </tr>
                     <tr style={{ height: '40px' }}>
                       <td>My task</td>
-                      <td>0</td>
-                      <td>1</td>
                       <td>0</td>
                       <td>1</td>
                     </tr>
@@ -926,27 +918,42 @@ const Dashboard = () => {
             <table className="m-auto" style={{ width: '80%' }}>
               <thead>
                 <tr style={{ background: '#175ca9', color: 'white', height: '50px' }}>
-                  <th>Services</th>
-                  <th>Task in Progress</th>
-                  <th>Task Overdue</th>
-                  <th>Client in Progress</th>
-                  <th>Client Overdue</th>
+                  <th>Applied By</th>
+                  <th>Leave Type</th>
+                  <th>Leave Mode</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Applied On</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr style={{ background: '#f2edf9', height: '40px' }}>
-                  <td>As Hoc</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>1</td>
+                  <td>SUVARAKA</td>
+                  <td>Medical</td>
+                  <td>Full Day</td>
+                  <td>30-01-2023</td>
+                  <td>31-01-2023</td>
+                  <td>15-02-2023</td>
+                  <td><AiOutlineCheckSquare style={{ color: 'green', marginRight: '.5rem' }} /><AiOutlineCloseSquare style={{ color: 'red' }} /></td>
                 </tr>
                 <tr style={{ height: '40px' }}>
-                  <td>My task</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>1</td>
+                  <td>SUVARAKA</td>
+                  <td>Medical</td>
+                  <td>Casual</td>
+                  <td>30-01-2023</td>
+                  <td>31-01-2023</td>
+                  <td>15-02-2023</td>
+                  <td><AiOutlineCheckSquare style={{ color: 'green', marginRight: '.5rem' }} /><AiOutlineCloseSquare style={{ color: 'red' }} /></td>
+                </tr>
+                <tr style={{ height: '40px' }}>
+                  <td>SUVARAKA</td>
+                  <td>Medical</td>
+                  <td>Casual</td>
+                  <td>30-01-2023</td>
+                  <td>31-01-2023</td>
+                  <td>15-02-2023</td>
+                  <td><AiOutlineCheckSquare style={{ color: 'green', marginRight: '.5rem' }} /><AiOutlineCloseSquare style={{ color: 'red' }} /></td>
                 </tr>
               </tbody>
             </table>
