@@ -729,6 +729,32 @@ const Dashboard = () => {
 
   return (
     <>
+      <CCard style={{ backgroundImage: 'linear-gradient(to top, #fff, #f5fcff)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', background: 'white', padding: '1rem', borderBottom: '1px solid #d8dbe0' }}>
+          <h2 style={{ fontSize: '0.875rem', color: '#333' }}>Welcome IYKONS</h2>
+          <h2 style={{ fontSize: '0.875rem', color: '#333' }}>Wednesday, February 22,2023</h2>
+        </div>
+        <div style={{ padding: '1rem' }}>
+          <h1 style={{ fontSize: '15px', fontWeight: 600, textDecoration: 'underline', color: '#175ca9' }}>LATEST HEADLINES</h1>
+          <div style={{ display: 'flex' }}>
+            <div>
+              <h3 style={{ fontSize: '15px', fontWeight: 500, color: '#666' }}>EY to pay $100 mln to settle U.S. charges of staff cheating on accountant exams</h3>
+              <p style={{ fontSize: '13px', color: '#666' }}>
+                The London-based auditor EY admitted to the charges and agreed to pay what the SEC said is its largest fine against an auditor.
+                EY will pay $100 million to settle U.S. Securities and Exchange Commission (SEC) charges that its auditors cheated on certified
+                public accounting (CPA) exams and that it misled the agency's investigators.
+              </p>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '15px', fontWeight: 500, color: '#666' }}>ACCA calls for women to play a reinforced role in race to net-zero</h3>
+              <p style={{ fontSize: '13px', color: '#666' }}>
+                Sectors benefiting the most from the transition to net-zero are utilities, construction and manufacturing and the
+                issue with these sectors is there is a very low percentage of women making up the workforce
+              </p>
+            </div>
+          </div>
+        </div>
+      </CCard>
       <CRow className="mt-4">
         <CCol sm={4}>
           <CCard style={{ backgroundColor: '#175ca912' }}>
@@ -759,7 +785,7 @@ const Dashboard = () => {
         </CCol>
       </CRow>
 
-      <CRow className="mt-4">
+      <CRow className="mt-4" style={{ height: '500px' }}>
         <CCol sm={6} className="m-auto">
           <CCard>
             <CCardBody >
@@ -774,151 +800,128 @@ const Dashboard = () => {
             </CCardBody>
           </CCard>
         </CCol>
+        <CCol sm={6}>
+          <div>
+            <div className="tab">
+              <button className="tablinks" onClick={(e) => openTab(e, 'tab1')}>Things To Follow</button>
+              <button className="tablinks" onClick={(e) => openTab(e, 'tab3')}>Things To Do</button>
+            </div>
+            <CCard id="tab1" className="p-4 tabcontent">
+              <div>
+                <div id="list1" className="dropdown-check-list" tabIndex="100">
+                  <span className="anchor">SELECT ALL</span>
+                  <ul className="items">
+                    <CFormCheck id="flexCheckChecked" label="CORPORATE" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="SOLE TRADER" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="INDIVIDUAL" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="PARTNERSHIP" defaultChecked />
+                  </ul>
+                </div>
+                <div id="list2" className="dropdown-check-list" tabIndex="100">
+                  <span className="anchor">SELECT ALL</span>
+                  <ul className="items">
+                    <CFormCheck id="flexCheckChecked" label="VAT" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="CT" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="PAVE" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="PENSION" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="AA" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="AA" defaultChecked />
+                    <CFormCheck id="flexCheckChecked" label="CS" defaultChecked />
+                  </ul>
+                </div>
+                <table style={{ width: '100%', textAlign: 'center', height: '190px' }}>
+                  <thead>
+                    <tr style={{ background: 'blue', color: 'black', height: '50px' }}>
+                      <th style={{ background: '#ffef93' }}>EMPLOYEE</th>
+                      <th style={{ background: '#dae9f6' }}>Task in Progress</th>
+                      <th style={{ background: '#ffef93' }}>Task Overdue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{}}>
+                      <td style={{ background: 'white' }}>USER 1</td>
+                      <td style={{ background: '#ffcd93' }}>157</td>
+                      <td style={{ background: '#ffcd93' }}>180</td>
+                    </tr>
+                    <tr style={{}}>
+                      <td style={{ background: 'white' }}>USER 1</td>
+                      <td style={{ background: '#ffcd93' }}>157</td>
+                      <td style={{ background: '#ffcd93' }}>180</td>
+                    </tr>
+                    <tr>
+                      <td style={{ background: 'white' }}>USER 1</td>
+                      <td style={{ background: '#ffcd93' }}>157</td>
+                      <td style={{ background: '#ffcd93' }}>180</td>
+                    </tr>
+                    <tr>
+                      <td style={{ background: 'white' }}>USER 1</td>
+                      <td style={{ background: '#ffcd93' }}>157</td>
+                      <td style={{ background: '#ffcd93' }}>180</td>
+                    </tr>
+                    <tr style={{ background: '#0000ff1f' }}>
+                      <td style={{ background: 'white' }}>USER 1</td>
+                      <td style={{ background: '#ffcd93' }}>157</td>
+                      <td style={{ background: '#ffcd93' }}>180</td>
+                    </tr>
+                    <tr style={{ background: '#0000ff1f' }}>
+                      <td style={{ background: 'white' }}>USER 1</td>
+                      <td style={{ background: '#ffcd93' }}>157</td>
+                      <td style={{ background: '#ffcd93' }}>180</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr style={{ background: 'white' }}>
+                      <td >Total</td>
+                      <td></td>
+                      <td>Load More....</td>
+                    </tr>
+                    <tr style={{ background: '#f2f2f2' }}>
+                      <td style={{ background: 'white' }}>Total</td>
+                      <td style={{ color: '#fd7b00' }}>2598</td>
+                      <td style={{ color: '#fd7b00' }}>1806</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </CCard >
+            <CCard id="tab3" className="p-4 tabcontent">
+              <div>
+                <table className="m-auto" style={{ width: '80%' }}>
+                  <thead>
+                    <tr style={{ background: '#175ca9', color: 'white', height: '50px' }}>
+                      <th>Services</th>
+                      <th>Task in Progress</th>
+                      <th>Task Overdue</th>
+                      <th>Client in Progress</th>
+                      <th>Client Overdue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ background: '#f2edf9', height: '40px' }}>
+                      <td>As Hoc</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>1</td>
+                    </tr>
+                    <tr style={{ height: '40px' }}>
+                      <td>My task</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>0</td>
+                      <td>1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CCard>
+          </div >
+        </CCol>
       </CRow>
 
       <div className="mt-4">
-        <div className="tab">
-          <button className="tablinks" onClick={(e) => openTab(e, 'tab1')}>Things To Follow</button>
-          <button className="tablinks" onClick={(e) => openTab(e, 'tab2')}>Things To Approve</button>
-          <button className="tablinks" onClick={(e) => openTab(e, 'tab3')}>Things To Do</button>
-        </div>
-        <CCard id="tab1" className="p-4 tabcontent">
-          <div>
-            <div id="list1" className="dropdown-check-list" tabIndex="100">
-              <span className="anchor">SELECT ALL</span>
-              <ul className="items">
-                <CFormCheck id="flexCheckChecked" label="CORPORATE" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="SOLE TRADER" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="INDIVIDUAL" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="PARTNERSHIP" defaultChecked />
-              </ul>
-            </div>
-            <div id="list2" className="dropdown-check-list" tabIndex="100">
-              <span className="anchor">SELECT ALL</span>
-              <ul className="items">
-                <CFormCheck id="flexCheckChecked" label="VAT" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="CT" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="PAVE" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="PENSION" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="AA" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="AA" defaultChecked />
-                <CFormCheck id="flexCheckChecked" label="CS" defaultChecked />
-              </ul>
-            </div>
-            <table className="hi" style={{ width: '100%', textAlign: 'center' }}>
-              <thead>
-                <tr style={{ background: 'blue', color: 'black', height: '50px' }}>
-                  <th style={{ background: '#ffef93' }}>EMPLOYEE</th>
-                  <th style={{ background: '#dae9f6' }}>Client in Progress</th>
-                  <th style={{ background: '#ffef93' }}>Client Overdue</th>
-                  <th style={{ background: '#dae9f6' }}>Task in Progress</th>
-                  <th style={{ background: '#ffef93' }}>Task Overdue</th>
-                  <th style={{ background: '#dae9f6' }}>Yet to Start</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style={{ height: '40px' }}>
-                  <td style={{ background: 'white' }}>USER 1</td>
-                  <td style={{ background: '#ffcd93' }}>111</td>
-                  <td style={{ background: '#ffcd93' }}>134</td>
-                  <td style={{ background: '#ffcd93' }}>157</td>
-                  <td style={{ background: '#ffcd93' }}>180</td>
-                  <td style={{ background: '#ffcd93' }}>203</td>
-                </tr>
-                <tr style={{ height: '40px' }}>
-                  <td style={{ background: 'white' }}>USER 1</td>
-                  <td style={{ background: '#ffcd93' }}>111</td>
-                  <td style={{ background: '#ffcd93' }}>134</td>
-                  <td style={{ background: '#ffcd93' }}>157</td>
-                  <td style={{ background: '#ffcd93' }}>180</td>
-                  <td style={{ background: '#ffcd93' }}>203</td>
-                </tr>
-                <tr style={{ height: '40px' }}>
-                  <td style={{ background: 'white' }}>USER 1</td>
-                  <td style={{ background: '#ffcd93' }}>111</td>
-                  <td style={{ background: '#ffcd93' }}>134</td>
-                  <td style={{ background: '#ffcd93' }}>157</td>
-                  <td style={{ background: '#ffcd93' }}>180</td>
-                  <td style={{ background: '#ffcd93' }}>203</td>
-                </tr>
-                <tr style={{ height: '40px' }}>
-                  <td style={{ background: 'white' }}>USER 1</td>
-                  <td style={{ background: '#ffcd93' }}>111</td>
-                  <td style={{ background: '#ffcd93' }}>134</td>
-                  <td style={{ background: '#ffcd93' }}>157</td>
-                  <td style={{ background: '#ffcd93' }}>180</td>
-                  <td style={{ background: '#ffcd93' }}>203</td>
-                </tr>
-                <tr style={{ background: '#0000ff1f', height: '40px' }}>
-                  <td style={{ background: 'white' }}>USER 1</td>
-                  <td style={{ background: '#ffcd93' }}>111</td>
-                  <td style={{ background: '#ffcd93' }}>134</td>
-                  <td style={{ background: '#ffcd93' }}>157</td>
-                  <td style={{ background: '#ffcd93' }}>180</td>
-                  <td style={{ background: '#ffcd93' }}>203</td>
-                </tr>
-                <tr style={{ background: '#0000ff1f', height: '40px' }}>
-                  <td style={{ background: 'white' }}>USER 1</td>
-                  <td style={{ background: '#ffcd93' }}>111</td>
-                  <td style={{ background: '#ffcd93' }}>134</td>
-                  <td style={{ background: '#ffcd93' }}>157</td>
-                  <td style={{ background: '#ffcd93' }}>180</td>
-                  <td style={{ background: '#ffcd93' }}>203</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr style={{ background: 'white', height: '40px' }}>
-                  <td >Total</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>Load More....</td>
-                </tr>
-                <tr style={{ background: '#f2f2f2', height: '40px' }}>
-                  <td style={{ background: 'white' }}>Total</td>
-                  <td style={{ color: '#fd7b00' }}>2231</td>
-                  <td style={{ color: '#fd7b00' }}>2369</td>
-                  <td style={{ color: '#fd7b00' }}>2598</td>
-                  <td style={{ color: '#fd7b00' }}>1806</td>
-                  <td style={{ color: '#fd7b00' }}>2038</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-        </CCard >
-        <CCard id="tab2" className="p-4 tabcontent">
-          <div>
-            <table className="m-auto" style={{ width: '80%' }}>
-              <thead>
-                <tr style={{ background: '#175ca9', color: 'white', height: '50px' }}>
-                  <th>Services</th>
-                  <th>Task in Progress</th>
-                  <th>Task Overdue</th>
-                  <th>Client in Progress</th>
-                  <th>Client Overdue</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style={{ background: '#f2edf9', height: '40px' }}>
-                  <td>As Hoc</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>1</td>
-                </tr>
-                <tr style={{ height: '40px' }}>
-                  <td>My task</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>1</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </CCard>
-        <CCard id="tab3" className="p-4 tabcontent">
+        <CCard className="p-4">
+          <h1 style={{ color: "#175ca9", fontSize: "17px" }}>Things To Approve</h1>
           <div>
             <table className="m-auto" style={{ width: '80%' }}>
               <thead>
