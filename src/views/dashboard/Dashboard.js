@@ -698,10 +698,26 @@ const Dashboard = () => {
     document.getElementById(tab).style.display = "block";
     evt.currentTarget.className += " active";
   }
+  function openTab2(evt, tab) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent2");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tab).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
   useEffect(() => {
     var chart = new ApexCharts(document.querySelector("#Column-chart"), options);
     chart.render();
     var chart = new ApexCharts(document.querySelector("#Bar-chart"), options3);
+    chart.render();
+    var chart = new ApexCharts(document.querySelector("#Bar-chart2"), options3);
     chart.render();
     var chart = new ApexCharts(document.querySelector("#Registered-Clients-Chart"), registeredClients);
     chart.render();
@@ -711,20 +727,22 @@ const Dashboard = () => {
     chart.render();
     var chart = new ApexCharts(document.querySelector("#Service-Wise-Status"), serviceWiseStatus);
     chart.render();
-    var checkList = document.getElementById('list1');
-    checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
-      if (checkList.classList.contains('visible'))
-        checkList.classList.remove('visible');
-      else
-        checkList.classList.add('visible');
-    }
-    var checkList2 = document.getElementById('list2');
-    checkList2.getElementsByClassName('anchor')[0].onclick = function (evt) {
-      if (checkList2.classList.contains('visible'))
-        checkList2.classList.remove('visible');
-      else
-        checkList2.classList.add('visible');
-    }
+    var chart = new ApexCharts(document.querySelector("#Service-Wise-Status2"), serviceWiseStatus);
+    chart.render();
+    // var checkList = document.getElementById('list1');
+    // checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+    //   if (checkList.classList.contains('visible'))
+    //     checkList.classList.remove('visible');
+    //   else
+    //     checkList.classList.add('visible');
+    // }
+    // var checkList2 = document.getElementById('list2');
+    // checkList2.getElementsByClassName('anchor')[0].onclick = function (evt) {
+    //   if (checkList2.classList.contains('visible'))
+    //     checkList2.classList.remove('visible');
+    //   else
+    //     checkList2.classList.add('visible');
+    // }
   });
 
   return (
@@ -800,11 +818,11 @@ const Dashboard = () => {
         </CCol>
         <CCol sm={6}>
           <div style={{ height: '500px' }}>
-            <div className="tab">
+            {/* <div className="tab">
               <button className="tablinks" onClick={(e) => openTab(e, 'tab1')}>Things To Follow</button>
               <button className="tablinks" onClick={(e) => openTab(e, 'tab3')}>Things To Do</button>
-            </div>
-            <CCard id="tab1" className="p-4 tabcontent">
+            </div> */}
+            {/* <CCard id="tab1" className="p-4 tabcontent">
               <div>
                 <div id="list1" className="dropdown-check-list" tabIndex="100">
                   <span className="anchor">SELECT ALL</span>
@@ -906,10 +924,57 @@ const Dashboard = () => {
                   </tbody>
                 </table>
               </div>
-            </CCard>
+            </CCard> */}
           </div >
         </CCol>
       </CRow>
+
+      <div>
+        <div className="tab">
+          <button className="tablinks" onClick={(e) => openTab(e, 'tab1')}>Things To Follow</button>
+          <button className="tablinks" onClick={(e) => openTab(e, 'tab2')}>Things To Do</button>
+        </div>
+        <div id="tab1" className="p-4 tabcontent">
+          <div className="tab">
+            <button className="tablinks" onClick={(e) => openTab2(e, 'subtab1')}>User Wise Data</button>
+            <button className="tablinks" onClick={(e) => openTab2(e, 'subtab2')}>Service wise status</button>
+          </div>
+          <CCard id="subtab1" className="p-4 tabcontent2" style={{ background: '#575757' }}>
+            <CCardBody>
+              <CCardTitle style={{ color: 'white' }}>User Wise Data</CCardTitle>
+              <CCardText id="Bar-chart">
+              </CCardText>
+            </CCardBody>
+          </CCard>
+          <CCard id="subtab2" className="p-4 tabcontent2">
+            <CCardBody>
+              <CCardTitle>Service wise status</CCardTitle>
+              <CCardText id="Service-Wise-Status">
+              </CCardText>
+            </CCardBody>
+          </CCard>
+        </div>
+        <div id="tab2" className="p-4 tabcontent">
+          <div className="tab">
+            <button className="tablinks" onClick={(e) => openTab2(e, 'subtab3')}>User Wise Data</button>
+            <button className="tablinks" onClick={(e) => openTab2(e, 'subtab4')}>Service wise status</button>
+          </div>
+          <CCard id="subtab3" className="p-4 tabcontent2" style={{ background: '#575757' }}>
+            <CCardBody>
+              <CCardTitle style={{ color: 'white' }}>User Wise Data</CCardTitle>
+              <CCardText id="Bar-chart2">
+              </CCardText>
+            </CCardBody>
+          </CCard>
+          <CCard id="subtab4" className="p-4 tabcontent2">
+            <CCardBody>
+              <CCardTitle>Service wise status</CCardTitle>
+              <CCardText id="Service-Wise-Status2">
+              </CCardText>
+            </CCardBody>
+          </CCard>
+        </div>
+      </div>
 
       <div className="mt-4">
         <CCard className="p-4">
@@ -960,24 +1025,6 @@ const Dashboard = () => {
           </div>
         </CCard>
       </div >
-
-
-      <CCard className="mb-4 mt-4" style={{ background: '#575757' }}>
-        <CCardBody>
-          <CCardTitle style={{ color: 'white' }}>User Wise Data</CCardTitle>
-          <CCardText id="Bar-chart">
-          </CCardText>
-        </CCardBody>
-      </CCard>
-
-      <CCard className="mb-4 mt-4">
-        <CCardBody>
-          <CCardTitle>Service wise status</CCardTitle>
-          <CCardText id="Service-Wise-Status">
-          </CCardText>
-        </CCardBody>
-      </CCard>
-
 
       <div className="row">
         <div className="col-xl-12">
