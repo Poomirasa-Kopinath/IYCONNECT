@@ -685,6 +685,61 @@ const Dashboard = () => {
     }
   };
 
+  var missingInfo = {
+    series: [{
+      data: [21, 22]
+    }],
+    chart: {
+      height: 250,
+      type: 'bar',
+      events: {
+        click: function (chart, w, e) {
+          // console.log(chart, w, e)
+        }
+      }
+    },
+    fill: {
+      opacity: 1,
+      colors: ['#175ca9cc', '#175ca9cc', '#175ca9cc', '#175ca9cc']
+    },
+
+    plotOptions: {
+      bar: {
+        columnWidth: '45%',
+        distributed: true,
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    legend: {
+      show: false
+    },
+    xaxis: {
+      categories: [
+        ['Authentication codes'],
+        ['ID Card'],
+      ],
+      labels: {
+        style: {
+          colors: ['#175ca9cc', '#175ca9cc', '#175ca9cc', '#175ca9cc'],
+          fontSize: '12px'
+        }
+      }
+    },
+    yaxis: {
+      title: {
+        text: ''
+      },
+      labels: {
+        show: 0
+      }
+    },
+    grid: {
+      show: false,
+    }
+  };
+
   function openTab(evt, tab) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -714,6 +769,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     var chart = new ApexCharts(document.querySelector("#Column-chart"), options);
+    chart.render();
+    var chart = new ApexCharts(document.querySelector("#missing-info-Chart"), missingInfo);
     chart.render();
     var chart = new ApexCharts(document.querySelector("#Bar-chart"), options3);
     chart.render();
@@ -817,115 +874,15 @@ const Dashboard = () => {
           </div>
         </CCol>
         <CCol sm={6}>
-          <div style={{ height: '500px' }}>
-            {/* <div className="tab">
-              <button className="tablinks" onClick={(e) => openTab(e, 'tab1')}>Things To Follow</button>
-              <button className="tablinks" onClick={(e) => openTab(e, 'tab3')}>Things To Do</button>
-            </div> */}
-            {/* <CCard id="tab1" className="p-4 tabcontent">
-              <div>
-                <div id="list1" className="dropdown-check-list" tabIndex="100">
-                  <span className="anchor">SELECT ALL</span>
-                  <ul className="items">
-                    <CFormCheck id="flexCheckChecked" label="CORPORATE" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="SOLE TRADER" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="INDIVIDUAL" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="PARTNERSHIP" defaultChecked />
-                  </ul>
-                </div>
-                <div id="list2" className="dropdown-check-list" tabIndex="100">
-                  <span className="anchor">SELECT ALL</span>
-                  <ul className="items">
-                    <CFormCheck id="flexCheckChecked" label="VAT" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="CT" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="PAVE" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="PENSION" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="AA" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="AA" defaultChecked />
-                    <CFormCheck id="flexCheckChecked" label="CS" defaultChecked />
-                  </ul>
-                </div>
-                <table style={{ width: '100%', textAlign: 'center', height: '278px' }}>
-                  <thead>
-                    <tr style={{ background: 'blue', color: 'black', height: '50px' }}>
-                      <th style={{ background: '#ffef93' }}>EMPLOYEE</th>
-                      <th style={{ background: '#dae9f6' }}>Task in Progress</th>
-                      <th style={{ background: '#ffef93' }}>Task Overdue</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style={{}}>
-                      <td style={{ background: 'white' }}>USER 1</td>
-                      <td style={{ background: '#ffcd93' }}>157</td>
-                      <td style={{ background: '#ffcd93' }}>180</td>
-                    </tr>
-                    <tr style={{}}>
-                      <td style={{ background: 'white' }}>USER 1</td>
-                      <td style={{ background: '#ffcd93' }}>157</td>
-                      <td style={{ background: '#ffcd93' }}>180</td>
-                    </tr>
-                    <tr>
-                      <td style={{ background: 'white' }}>USER 1</td>
-                      <td style={{ background: '#ffcd93' }}>157</td>
-                      <td style={{ background: '#ffcd93' }}>180</td>
-                    </tr>
-                    <tr>
-                      <td style={{ background: 'white' }}>USER 1</td>
-                      <td style={{ background: '#ffcd93' }}>157</td>
-                      <td style={{ background: '#ffcd93' }}>180</td>
-                    </tr>
-                    <tr style={{ background: '#0000ff1f' }}>
-                      <td style={{ background: 'white' }}>USER 1</td>
-                      <td style={{ background: '#ffcd93' }}>157</td>
-                      <td style={{ background: '#ffcd93' }}>180</td>
-                    </tr>
-                    <tr style={{ background: '#0000ff1f' }}>
-                      <td style={{ background: 'white' }}>USER 1</td>
-                      <td style={{ background: '#ffcd93' }}>157</td>
-                      <td style={{ background: '#ffcd93' }}>180</td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr style={{ background: 'white' }}>
-                      <td >Total</td>
-                      <td></td>
-                      <td>Load More....</td>
-                    </tr>
-                    <tr style={{ background: '#f2f2f2' }}>
-                      <td style={{ background: 'white' }}>Total</td>
-                      <td style={{ color: '#fd7b00' }}>2598</td>
-                      <td style={{ color: '#fd7b00' }}>1806</td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </CCard >
-            <CCard id="tab3" className="p-4 tabcontent">
-              <div style={{ height: "398px" }}>
-                <table className="m-auto" style={{ width: '80%' }}>
-                  <thead>
-                    <tr style={{ background: '#175ca9', color: 'white', height: '50px' }}>
-                      <th>Services</th>
-                      <th>Task in Progress</th>
-                      <th>Task Overdue</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style={{ background: '#f2edf9', height: '40px' }}>
-                      <td>As Hoc</td>
-                      <td>0</td>
-                      <td>0</td>
-                    </tr>
-                    <tr style={{ height: '40px' }}>
-                      <td>My task</td>
-                      <td>0</td>
-                      <td>1</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </CCard> */}
-          </div >
+          <div style={{ height: '500px', background: 'white', padding: "1rem" }}>
+            <CCard style={{ backgroundColor: '#175ca912', height: '100%' }}>
+              <CCardBody>
+                <CCardTitle>Missing Info<span style={{ float: 'right' }}>405</span></CCardTitle>
+                <CCardText id="missing-info-Chart">
+                </CCardText>
+              </CCardBody>
+            </CCard>
+          </div>
         </CCol>
       </CRow>
 

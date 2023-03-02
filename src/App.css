@@ -470,7 +470,18 @@ element {
 	border-top: none;
 }
 
+.tabcontent2 {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
 #tab1 {
+	display: block;
+}
+
+#subtab1 {
 	display: block;
 }
 
